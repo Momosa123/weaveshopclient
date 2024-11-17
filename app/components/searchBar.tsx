@@ -9,7 +9,7 @@ interface SearchBarProps {
   onSearchResults?: (results: any) => void;
 }
 
-export default  function searchBar({ isMobile = false, onClose, onSearchResults }: SearchBarProps) {
+export default  function SearchBar({ isMobile = false, onClose, onSearchResults }: SearchBarProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
