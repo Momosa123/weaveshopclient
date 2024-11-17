@@ -1,4 +1,4 @@
-import { searchProductsByText } from "@/utils/action";
+import { searchProductsByText } from "@/utils/searchProducts";
 
 import Product from "./Product";
 

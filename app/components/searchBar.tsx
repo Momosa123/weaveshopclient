@@ -1,6 +1,6 @@
 "use client";
 import { Search, ImageUp } from "lucide-react";
-import { searchProductsByImage, searchProductsByText } from "@/utils/action";
+import { searchProductsByImage, searchProductsByText } from "@/utils/searchProducts";
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 
 interface SearchBarProps {
