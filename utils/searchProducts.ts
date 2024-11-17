@@ -1,14 +1,10 @@
-"use server";
-import { imageToBase64 } from "./imageToBase64";
+'use server';
 import weaviate from "weaviate-client";
 import {ProductType} from "../app/definition"
 
 //search by image
-export async function searchProductsByImage(imageFile: File) {
+export async function searchProductsByImage(base64Image: string) {
   try {
-    // Convert image to base64
-    const base64String = await imageToBase64(imageFile);
-    
     // Connect to Weaviate
     const client = await weaviate.connectToLocal();
     const collectionName = "FashionProducts";
@@ -16,11 +12,11 @@ export async function searchProductsByImage(imageFile: File) {
 
     // Perform nearImage search
     const result = await myCollection.query.nearImage(
-      base64String,
+      base64Image,  // The model provider integration will automatically vectorize the query
       {
         limit: 2,
       }
-    );
+    ) 
 
     return result;
   } catch (error) {
