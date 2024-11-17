@@ -2,6 +2,8 @@
 import { imageToBase64 } from "./imageToBase64";
 import weaviate from "weaviate-client";
 import {ProductType} from "../app/definition"
+
+//search by image
 export async function searchProductsByImage(imageFile: File) {
   try {
     // Convert image to base64
@@ -26,7 +28,7 @@ export async function searchProductsByImage(imageFile: File) {
     throw error;
   }
 }
-
+//search by text
 export async function searchProductsByText(searchText: string) {
   try {
     // Connect to Weaviate
@@ -47,13 +49,3 @@ export async function searchProductsByText(searchText: string) {
   }
 }
   
-export async function getAllProducts(){
-  const client = await weaviate.connectToLocal();
-  const collectionName = "FashionProducts";
-  const myCollection = client.collections.get<ProductType>(collectionName);
-  let fashionProducts = []
-  for await (let item of myCollection.iterator()) {
-    fashionProducts.push(item)
-  }
-  return fashionProducts;
-}

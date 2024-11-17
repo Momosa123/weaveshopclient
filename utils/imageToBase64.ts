@@ -1,5 +1,4 @@
-"use server";
-
+//convert image to base64
 export async function imageToBase64(imageFile: File): Promise<string> {
   return new Promise((resolve, reject) => {
     if (!imageFile.type.includes('png')) {
