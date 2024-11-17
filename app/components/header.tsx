@@ -25,7 +25,7 @@ export default function Header() {
               height={24}
             />
           </button>
-          <h1 className="text-2xl font-bold text-center flex-1 md:flex-none">WEAVISHOP</h1>
+          <Link href="/"><h1 className="text-2xl font-bold text-center flex-1 md:flex-none">WEAVISHOP</h1></Link>
         </div>
 
         {/* Desktop navigation */}
