@@ -9,3 +9,9 @@ export interface ProductType {
     price: number;
     main_image: string;
 }
+export interface ProductGraphQL {
+    main_image: string;
+    title: string;
+    average_rating: number;
+    price: number;
+}
