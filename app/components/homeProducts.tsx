@@ -1,10 +1,13 @@
 import { ProductGraphQL } from "../definition";
-import Product from "./Product";
-import { getProducts } from "@/utils/getProducts";
+import Product from "./product";
+import { getProducts } from "@/lib/getProducts";
 export default async function AllProducts(){
    const response = await getProducts()
    const products = response.data.Get.FashionProducts
     return (
+
+      <div>
+        <h1 className="text-5xl font-integral font-bold text-center mb-10">NEW ARRIVALS</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product:ProductGraphQL,index:number) => (
                 <Product 
@@ -16,5 +19,6 @@ export default async function AllProducts(){
                 />
             ))} 
         </div>
+      </div>
     );
 }
