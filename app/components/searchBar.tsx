@@ -1,7 +1,7 @@
 "use client";
 import { Search, ImageUp } from "lucide-react";
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import { fileToBase64 } from '@/utils/fileToBase64';
+import { fileToBase64 } from '@/lib/utils';
 import { useImageSearch } from '../context/ImageSearchContext';
 import { useRef } from 'react';
 
