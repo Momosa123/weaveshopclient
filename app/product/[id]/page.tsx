@@ -1,6 +1,6 @@
 import ProductDetail from "@/app/components/productDetail";
 import { getProduct } from "@/lib/getProducts";
-
+import ProductReviews from "@/app/components/productReviews";
 export default async function ProductPage({ params }: { params: { id: string } }) {
     const response = await getProduct(params.id);
     console.log(response)
@@ -11,6 +11,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
     }
 
     return (
+        <>
         <ProductDetail 
             main_image={product.main_image}
             title={product.title}
@@ -19,5 +20,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
             
             reviews_count={product.reviews_count}
         />
+        <ProductReviews />
+        </>
     );
 }
