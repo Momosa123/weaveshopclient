@@ -11,7 +11,8 @@ export default async function AllProducts(){
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product:ProductGraphQL,index:number) => (
                 <Product 
-                    key={index}
+                    key={product._additional.id}
+                    id={product._additional.id}
                     main_image={product.main_image}
                     title={product.title}
                     average_rating={product.average_rating}

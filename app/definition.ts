@@ -10,6 +10,7 @@ export interface ProductType {
     main_image: string;
 }
 export interface ProductGraphQL {
+    _additional:{id:string};
     main_image: string;
     title: string;
     average_rating: number;

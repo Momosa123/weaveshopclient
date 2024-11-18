@@ -81,7 +81,7 @@ export default function Hero() {
       {/* Mobile Version */}
       <div className="md:hidden">
         <div className="px-6 pt-8 pb-6">
-          <h1 className="text-4xl font-bold leading-tight mb-4">
+          <h1 className="text-4xl font-integral leading-tight mb-4">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
           <p className="text-gray-600 mb-6">

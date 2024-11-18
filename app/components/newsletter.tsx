@@ -1,6 +1,6 @@
 export default function Newsletter() {
     return (
-      <div className="relative -mb-20 md:-mb-24">
+      <div className="relative -mb-20 md:-mb-24 mt-20">
         <div className="mx-6 md:mx-auto max-w-6xl">
           <div className="bg-black rounded-xl px-6 py-8 md:py-12 md:px-16">
             <div className="md:flex md:items-center md:justify-between">
