@@ -31,9 +31,9 @@ export default function Header() {
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center gap-4">
           <Link href="/">Shop</Link>
-          <Link href="/about">On Sale</Link>
-          <Link href="/contact">New Arrivals</Link>
-          <Link href="/contact">Brands</Link>
+          <Link href="/">On Sale</Link>
+          <Link href="/">New Arrivals</Link>
+          <Link href="/">Brands</Link>
         </div>
 
         {/* Right section: Search and Basket */}
@@ -87,9 +87,9 @@ export default function Header() {
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden z-50">
           <div className="flex flex-col p-4">
             <Link href="/" className="py-2 hover:bg-gray-100">Shop</Link>
-            <Link href="/about" className="py-2 hover:bg-gray-100">On Sale</Link>
-            <Link href="/contact" className="py-2 hover:bg-gray-100">New Arrivals</Link>
-            <Link href="/contact" className="py-2 hover:bg-gray-100">Brands</Link>
+            <Link href="/" className="py-2 hover:bg-gray-100">On Sale</Link>
+            <Link href="/" className="py-2 hover:bg-gray-100">New Arrivals</Link>
+            <Link href="/" className="py-2 hover:bg-gray-100">Brands</Link>
           </div>
         </div>
       )}

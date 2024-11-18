@@ -9,6 +9,12 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			integral: ['IntegralCF', 'sans-serif'],
+		  },
+		animation: {
+			scroll: 'scroll 30s linear infinite',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
