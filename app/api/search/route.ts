@@ -1,4 +1,4 @@
-import { searchProductsByImage, searchProductsByText } from '@/utils/searchProducts';
+import { searchProductsByImage, searchProductsByText } from '@/lib/searchProducts';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
