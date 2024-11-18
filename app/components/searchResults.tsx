@@ -1,5 +1,5 @@
 'use client';
-import Product from "./Product";
+import Product from "./product";
 import { useEffect, useState } from 'react';
 import { useImageSearch } from '../context/ImageSearchContext';
 
