@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import { ImageSearchProvider } from './context/ImageSearchContext';
+import Footer from "./components/footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ImageSearchProvider>
           <Header />
           {children}
+          <Footer />
         </ImageSearchProvider>
       </body>
     </html>
