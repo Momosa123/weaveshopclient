@@ -1,13 +1,15 @@
 export interface ProductType {
-    metadata:any;
+    metadata:Record<string, unknown>;
     uuid:string;
-    vectors:any;
+    vectors:Record<string, unknown>;
     [key: string]: any;
+    properties: {
     title: string;
     average_rating: number;
     rating_number: number;
     price: number;
     main_image: string;
+    }
 }
 export interface ProductGraphQL {
     _additional:{id:string};
