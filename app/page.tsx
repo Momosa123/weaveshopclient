@@ -21,14 +21,9 @@ export default async function Home(props: {
     <div >
       <main className="flex flex-col gap-8 p-8 row-start-2 items-center sm:items-start">
         <Hero />
-        {(query || isImageSearch) ? (
-          <SearchResults 
-            query={query} 
-            isImageSearch={isImageSearch} 
-          />
-        ) : (
+       
           <AllProducts /> 
-        )}
+    
         <ReviewScroller />  
       </main>
     </div>

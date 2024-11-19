@@ -2,8 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { ShoppingBasket, Search, User, ImageUp } from "lucide-react";
-import SearchBar from "./searchBar"
+import { ShoppingBasket, Search, User } from "lucide-react";
+/* import SearchBar from "./searchBar" */
     
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,9 +39,9 @@ export default function Header() {
         {/* Right section: Search and Basket */}
         <div className="flex items-center gap-4">
           {/* Desktop search */}
-          <div className="hidden md:block">
+        {/*   <div className="hidden md:block">
             <SearchBar />
-          </div>
+          </div> */}
 
           {/* Mobile search button */}
           <button 
@@ -77,7 +77,7 @@ export default function Header() {
                 ✕
               </button>
             </div>
-            <SearchBar isMobile onClose={() => setIsSearchOpen(false)} />
+          {/*   <SearchBar isMobile onClose={() => setIsSearchOpen(false)} /> */}
           </div>
         </div>
       )}
