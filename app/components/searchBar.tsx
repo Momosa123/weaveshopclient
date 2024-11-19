@@ -14,19 +14,30 @@ interface SearchBarProps {
 
 export default  function SearchBar({ isMobile = false, setResults, setIsImageSearch }: SearchBarProps) {
 
-  const [searchText, setSearchText] = useState('');
+
   const [searchImage, setSearchImage] = useState<File | null>(null);
-  const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-
+    
+    if (searchImage) {
+      formData.set('searchImage', searchImage);
+      setIsImageSearch(true);
+    } else {
+      setIsImageSearch(false);
+    }
+    
     const results = await searchAction(formData);
     setResults(results);
-  };
 
+    // Réinitialiser l'état de l'image
+    setSearchImage(null);
+    // Réinitialiser le formulaire si nécessaire
+    formRef.current?.reset();
+  };
+console.log(searchImage);
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="relative">
       <input
@@ -52,7 +63,8 @@ export default  function SearchBar({ isMobile = false, setResults, setIsImageSea
           onChange={(e) => {
             const file = e.target.files?.[0];
             if (file) {
-                setSearchImage(file);
+              setSearchImage(file);
+              formRef.current?.requestSubmit();
             }
           }}
         />

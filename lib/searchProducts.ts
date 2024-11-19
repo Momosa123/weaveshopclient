@@ -1,7 +1,7 @@
 'use server';
 import weaviate from "weaviate-client";
 import {ProductType} from "../app/definition"
-import { WeaviateReturn } from "weaviate-client"; 
+
 //search by image
 export async function searchProductsByImage(base64Image: string) {
   try {

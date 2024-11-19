@@ -30,6 +30,6 @@ let results : WeaviateReturn<ProductType> | undefined;
 
   // Optionnel : Revalider une page en cache
   revalidatePath('/search');
-  console.log("results", results);
+  console.log("results", results?.objects[0].properties);
   return results;
 }
