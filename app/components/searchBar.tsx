@@ -1,6 +1,5 @@
 "use client";
 import { Search, ImageUp } from "lucide-react";
-import { useRouter } from 'next/navigation'; // Pour naviguer ou actualiser
 import { useRef, useState } from 'react';
 import { searchAction } from "@/lib/action";
 import { ProductType } from "../definition";
