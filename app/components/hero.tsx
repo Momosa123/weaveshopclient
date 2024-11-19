@@ -17,18 +17,17 @@ export default function Hero() {
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-6">
             <div className="max-w-[600px]">
-              <h1 className="text-[64px] leading-tight font-bold mb-4">
-                FIND CLOTHES THAT MATCHES YOUR STYLE
+              <h1 className="text-[56px] leading-tight font-bold mb-4">
+                FIND CLOTHES THAT MATCHES YOUR STYLE USING AI
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                Browse through our diverse range of meticulously crafted garments, designed 
-                to bring out your individuality and cater to your sense of style.
+                Use AI to search with text or image for clothes that matches your style. Our advanced AI technology analyzes your preferences and finds the perfect pieces for your wardrobe. Simply describe what you're looking for or upload a reference image, and let our AI do the work for you.
               </p>
               <Link 
-                href="/shop" 
+                href="/search" 
                 className="inline-block bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
               >
-                Shop Now
+                Search Now
               </Link>
               <div className="mt-8">
                 {/* Container pour les stats */}
@@ -82,17 +81,16 @@ export default function Hero() {
       <div className="md:hidden">
         <div className="px-6 pt-8 pb-6">
           <h1 className="text-4xl font-integral leading-tight mb-4">
-            FIND CLOTHES THAT MATCHES YOUR STYLE
+            FIND CLOTHES THAT MATCHES YOUR STYLE USING AI
           </h1>
           <p className="text-gray-600 mb-6">
-            Browse through our diverse range of meticulously crafted garments, designed 
-            to bring out your individuality and cater to your sense of style.
+           Use AI to search with text or image for clothes that matches your style.
           </p>
           <Link 
             href="/shop" 
             className="inline-block w-full bg-black text-white py-4 rounded-full text-center text-lg font-medium hover:bg-gray-800 transition-colors"
           >
-            Shop Now
+            Search Now
           </Link>
           <div className="flex flex-col gap-4 mt-8">
             <div>

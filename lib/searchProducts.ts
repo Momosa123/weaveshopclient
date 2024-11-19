@@ -8,7 +8,7 @@ export async function searchProductsByImage(base64Image: string) {
     // Connect to Weaviate
     const client = await weaviate.connectToLocal();
     const collectionName = "FashionProducts";
-    const myCollection = client.collections.get(collectionName);
+    const myCollection = client.collections.get<ProductType>(collectionName);
 
     // Perform nearImage search
     const result = await myCollection.query.nearImage(
