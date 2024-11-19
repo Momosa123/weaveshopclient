@@ -5,12 +5,12 @@ import { ProductType } from "../definition";
 
 interface SearchResultsProps {
 results:WeaviateReturn<ProductType> | undefined
-isImageSearch: boolean
+
 }
 
 
 
-export default function SearchResults({ results, isImageSearch }: SearchResultsProps) {
+export default function SearchResults({ results }: SearchResultsProps) {
  console.log(results?.objects);
 
   return (

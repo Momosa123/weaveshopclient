@@ -8,11 +8,10 @@ import { WeaviateReturn } from "weaviate-client";
 interface SearchBarProps {
     isMobile?: boolean;
     setResults: (results: WeaviateReturn<ProductType> | undefined) => void;
-    setIsImageSearch: (imageSearch: boolean) => void;
 }
 
-export default  function SearchBar({ isMobile = false, setResults, setIsImageSearch }: SearchBarProps) {
-
+export default  function SearchBar({ isMobile = false, setResults }: SearchBarProps) {
+const [isImageSearch, setIsImageSearch] = useState(false);
 
   const [searchImage, setSearchImage] = useState<File | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -31,9 +30,9 @@ export default  function SearchBar({ isMobile = false, setResults, setIsImageSea
     const results = await searchAction(formData);
     setResults(results);
 
-    // Réinitialiser l'état de l'image
+    // Reset image state
     setSearchImage(null);
-    // Réinitialiser le formulaire si nécessaire
+    // Reset form
     formRef.current?.reset();
   };
 console.log(searchImage);
