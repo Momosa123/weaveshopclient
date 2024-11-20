@@ -30,7 +30,7 @@ export default function Header() {
 
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/">Shop</Link>
+          <Link href="/search">Search</Link>
           <Link href="/">On Sale</Link>
           <Link href="/">New Arrivals</Link>
           <Link href="/">Brands</Link>
