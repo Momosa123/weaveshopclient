@@ -15,7 +15,7 @@ export default async function ProductPage({
     const product = response.data.Get.FashionProducts[0];
     const imageUrl = product.main_image;
     const base64Image = await imageUrlToBase64(imageUrl);
-    const allSimilarProducts = await searchProductsByImage(base64Image);
+    const allSimilarProducts = await searchProductsByImage(base64Image, 4);
     const similarProducts = allSimilarProducts?.slice(1);
 
     if (!product) {
@@ -23,7 +23,7 @@ export default async function ProductPage({
     }
 
     return (
-        <>
+        <div className="flex flex-col min-h-screen pt-[72px]">
         <ProductDetail 
             main_image={product.main_image}
             title={product.title}
@@ -35,6 +35,6 @@ export default async function ProductPage({
         <SimilarProducts similarProducts={similarProducts} title="Similar Products" />
 
         <ProductReviews />
-        </>
+        </div>
     );
 }

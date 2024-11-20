@@ -5,7 +5,7 @@ export default function ProductReviews() {
   return (
       <>
        
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-6xl mx-auto px-4 mt-8">
     <h1 className="text-2xl font-bold mb-4 text-center">Product Reviews</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 

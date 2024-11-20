@@ -1,6 +1,5 @@
 'use server';
 
-
 import { revalidatePath } from 'next/cache';
 import { searchProductsByText, searchProductsByImage } from './searchProducts';
 import { ProductType } from '@/app/definition';
@@ -16,7 +15,7 @@ let results : WeaviateGenericObject<ProductType>[] | undefined;
   if (searchText) {
 
     // Recherche par texte (appel API ou base de données)
-   results = await searchProductsByText(searchText);
+   results = await searchProductsByText(searchText, 3);
 
   } else if (searchImage) {
     // Recherche par image
@@ -24,7 +23,7 @@ let results : WeaviateGenericObject<ProductType>[] | undefined;
     const imageBase64 = imageBuffer.toString('base64');
 
     // Appel au moteur vectoriel ou traitement backend
-     results = await searchProductsByImage(imageBase64);
+     results = await searchProductsByImage(imageBase64, 3);
   }
 
   // Optionnel : Revalider une page en cache
