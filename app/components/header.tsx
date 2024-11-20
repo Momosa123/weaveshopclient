@@ -86,7 +86,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden z-50">
           <div className="flex flex-col p-4">
-            <Link href="/" className="py-2 hover:bg-gray-100">Shop</Link>
+            <Link href="/search" className="py-2 hover:bg-gray-100">Search</Link>
             <Link href="/" className="py-2 hover:bg-gray-100">On Sale</Link>
             <Link href="/" className="py-2 hover:bg-gray-100">New Arrivals</Link>
             <Link href="/" className="py-2 hover:bg-gray-100">Brands</Link>
