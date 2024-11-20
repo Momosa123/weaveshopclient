@@ -14,7 +14,7 @@ export async function searchProductsByImage(base64Image: string) {
     const result = await myCollection.query.nearImage(
       base64Image,  // The model provider integration will automatically vectorize the query
       {
-        limit: 2,
+        limit: 3,
       }
     ) 
 
@@ -35,7 +35,7 @@ export async function searchProductsByText(searchText: string) {
     // Perform text search
     const result = await myCollection.query.nearText(
       searchText,
-      {limit: 2,}
+      {limit: 3,}
     );
 
     return result;
