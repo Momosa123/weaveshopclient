@@ -1,5 +1,5 @@
 "use client";
-import { WeaviateReturn } from "weaviate-client";
+import { WeaviateGenericObject } from "weaviate-client";
 import SearchBar from "../components/searchBar";
 import { useState } from "react";
 import { ProductType } from "../definition";
@@ -7,7 +7,7 @@ import Container from "../components/container";
 import SimilarProducts from "../components/similarProducts";
 
 export default function SearchPage() {
-    const [results, setResults] = useState<WeaviateReturn<ProductType> | undefined>(undefined); 
+    const [results, setResults] = useState<WeaviateGenericObject<ProductType>[] | undefined>(undefined); 
 
     return (
         <Container>

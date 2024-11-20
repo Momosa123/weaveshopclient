@@ -31,7 +31,7 @@ export default async function ProductPage({
             
             reviews_count={product.reviews_count}
         />
-        <SimilarProducts similarProducts={similarProducts} />
+        <SimilarProducts similarProducts={similarProducts} title="Similar Products" />
 
         <ProductReviews />
         </>
