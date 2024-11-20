@@ -1,6 +1,5 @@
 'use server';
 
-
 import { revalidatePath } from 'next/cache';
 import { searchProductsByText, searchProductsByImage } from './searchProducts';
 import { ProductType } from '@/app/definition';
