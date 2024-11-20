@@ -4,18 +4,17 @@
 import { revalidatePath } from 'next/cache';
 import { searchProductsByText, searchProductsByImage } from './searchProducts';
 import { ProductType } from '@/app/definition';
-import { WeaviateReturn } from 'weaviate-client';
+import { WeaviateGenericObject } from 'weaviate-client';
 
 
 export async function searchAction(formData: FormData) {
   const searchText = formData.get('searchText') as string | null;
   const searchImage = formData.get('searchImage') as File | null;
- console.log("searchText", searchText);
-console.log("searchImage", searchImage); 
+
   
-let results : WeaviateReturn<ProductType> | undefined;
+let results : WeaviateGenericObject<ProductType>[] | undefined;
   if (searchText) {
-    console.log("on est là");
+
     // Recherche par texte (appel API ou base de données)
    results = await searchProductsByText(searchText);
 
@@ -30,6 +29,6 @@ let results : WeaviateReturn<ProductType> | undefined;
 
   // Optionnel : Revalider une page en cache
   revalidatePath('/search');
-  console.log("results", results?.objects[0].properties);
+
   return results;
 }

@@ -1,7 +1,7 @@
-import SearchResults from "./components/searchResults";
 import AllProducts from "./components/homeProducts";
 import Hero from "./components/hero";
 import ReviewScroller from "./components/reviewScroller";
+import Container from "./components/container";
 interface SearchParams {
   search?: string;
   imageSearch?: string;
@@ -19,13 +19,11 @@ export default async function Home(props: {
 
   return (
     <div >
-      <main className="flex flex-col gap-8 p-8 row-start-2 items-center sm:items-start">
+      <Container>
         <Hero />
-       
-          <AllProducts /> 
-    
+        <AllProducts /> 
         <ReviewScroller />  
-      </main>
+      </Container>
     </div>
   );
 }

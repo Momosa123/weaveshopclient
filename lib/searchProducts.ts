@@ -1,4 +1,3 @@
-'use server';
 import weaviate from "weaviate-client";
 import {ProductType} from "../app/definition"
 
@@ -14,11 +13,11 @@ export async function searchProductsByImage(base64Image: string) {
     const result = await myCollection.query.nearImage(
       base64Image,  // The model provider integration will automatically vectorize the query
       {
-        limit: 2,
+        limit: 4,
       }
     ) 
 
-    return result;
+    return result?.objects;
   } catch (error) {
     console.error('Error searching similar products:', error);
     throw error;
@@ -35,10 +34,10 @@ export async function searchProductsByText(searchText: string) {
     // Perform text search
     const result = await myCollection.query.nearText(
       searchText,
-      {limit: 2,}
+      {limit: 4,}
     );
 
-    return result;
+    return result?.objects;
   } catch (error) {
     console.error('Error searching products by text:', error);
     throw error;

@@ -3,11 +3,11 @@ import { Search, ImageUp } from "lucide-react";
 import { useRef, useState } from 'react';
 import { searchAction } from "@/lib/action";
 import { ProductType } from "../definition";
-import { WeaviateReturn } from "weaviate-client";
+import { WeaviateGenericObject } from "weaviate-client";
 
 interface SearchBarProps {
     isMobile?: boolean;
-    setResults: (results: WeaviateReturn<ProductType> | undefined) => void;
+    setResults: (results: WeaviateGenericObject<ProductType>[] | undefined) => void;
 }
 
 export default  function SearchBar({ isMobile = false, setResults }: SearchBarProps) {

@@ -107,15 +107,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative h-[500px]">
-          <Image
-            src="/hero-small.png"
-            alt="Fashion couple wearing stylish outfits"
-            fill
-            priority
-            className="object-cover"
-          />
-        </div>
+      
       </div>
 
       {/* Decorative Stars */}
