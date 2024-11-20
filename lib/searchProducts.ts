@@ -1,5 +1,5 @@
 import weaviate from "weaviate-client";
-import {ProductType} from "../app/definition"
+import {ProductProperties} from "../app/definition"
 
 //search by image
 export async function searchProductsByImage(base64Image: string, limit: number = 4) {
@@ -7,7 +7,7 @@ export async function searchProductsByImage(base64Image: string, limit: number =
     // Connect to Weaviate
     const client = await weaviate.connectToLocal();
     const collectionName = "FashionProducts";
-    const myCollection = client.collections.get<ProductType>(collectionName);
+    const myCollection = client.collections.get<ProductProperties>(collectionName);
 
     // Perform nearImage search
     const result = await myCollection.query.nearImage(
@@ -29,7 +29,7 @@ export async function searchProductsByText(searchText: string, limit: number = 4
     // Connect to Weaviate
     const client = await weaviate.connectToLocal();
     const collectionName = "FashionProducts";
-    const myCollection = client.collections.get<ProductType>(collectionName);
+    const myCollection = client.collections.get<ProductProperties>(collectionName);
 
     // Perform text search
     const result = await myCollection.query.nearText(

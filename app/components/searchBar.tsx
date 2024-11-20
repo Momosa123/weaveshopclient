@@ -1,41 +1,33 @@
 "use client";
 import { Search, ImageUp } from "lucide-react";
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { searchAction } from "@/lib/action";
-import { ProductType } from "../definition";
+import { ProductProperties } from "../definition";
 import { WeaviateGenericObject } from "weaviate-client";
 
 interface SearchBarProps {
     isMobile?: boolean;
-    setResults: (results: WeaviateGenericObject<ProductType>[] | undefined) => void;
+    setResults: (results: WeaviateGenericObject<ProductProperties>[] | undefined) => void;
 }
 
 export default  function SearchBar({ isMobile = false, setResults }: SearchBarProps) {
-const [isImageSearch, setIsImageSearch] = useState(false);
 
-  const [searchImage, setSearchImage] = useState<File | null>(null);
+
+  
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     
-    if (searchImage) {
-      formData.set('searchImage', searchImage);
-      setIsImageSearch(true);
-    } else {
-      setIsImageSearch(false);
-    }
-    
+  
     const results = await searchAction(formData);
     setResults(results);
 
-    // Reset image state
-    setSearchImage(null);
     // Reset form
     formRef.current?.reset();
   };
-console.log(searchImage);
+
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="relative">
       <input
@@ -61,7 +53,7 @@ console.log(searchImage);
           onChange={(e) => {
             const file = e.target.files?.[0];
             if (file) {
-              setSearchImage(file);
+            
               formRef.current?.requestSubmit();
             }
           }}

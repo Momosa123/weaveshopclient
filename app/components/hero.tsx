@@ -21,7 +21,7 @@ export default function Hero() {
                 FIND CLOTHES THAT MATCHES YOUR STYLE USING AI
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                Use AI to search with text or image for clothes that matches your style. Our advanced AI technology analyzes your preferences and finds the perfect pieces for your wardrobe. Simply describe what you're looking for or upload a reference image, and let our AI do the work for you.
+                Use AI to search with text or image for clothes that matches your style. Our advanced AI technology analyzes your preferences and finds the perfect pieces for your wardrobe. Simply describe what you&apos;re looking for or upload a reference image, and let our AI do the work for you.
               </p>
               <Link 
                 href="/search" 

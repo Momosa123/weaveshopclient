@@ -1,9 +1,8 @@
-import { WeaviateGenericObject, WeaviateReturn } from "weaviate-client";
-import { ProductType } from "../definition";
+import { ProductProperties } from "../definition";
 import Product from "./product";
 
 interface SimilarProductsProps {
-    similarProducts:WeaviateGenericObject<ProductType>[] | undefined
+    similarProducts:ProductProperties[] | undefined
     title: string
     }
 
@@ -15,10 +14,10 @@ export default function SimilarProducts({ similarProducts, title }: SimilarProdu
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {similarProducts?.map((product) => (
               <Product
-                key={product.uuid}
                 id={product.uuid}
+                key={product.uuid}
                 main_image={product.properties.main_image}
-                title={product.properties.title}
+                title={product.properties.title}  
                 average_rating={product.properties.average_rating}
                 price={product.properties.price}
               />
