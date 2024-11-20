@@ -10,8 +10,7 @@ Weaveshop is a modern, scalable, and user-friendly platform designed to provide 
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/Momosa123/weaveshopclient.git
-`cd weaveshopclient`
+`git clone https://github.com/Momosa123/weaveshopclient.git cd weaveshopclient`
 
 2. Install dependencies:
 `npm install`
