@@ -19,3 +19,10 @@ export const fileToBase64 = (file: File): Promise<string> => {
     reader.readAsDataURL(file);
   });
 };
+
+export async function imageUrlToBase64(imageUrl: string): Promise<string> {
+  const response = await fetch(imageUrl);
+  const arrayBuffer = await response.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+  return buffer.toString('base64');
+}
