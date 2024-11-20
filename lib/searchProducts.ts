@@ -2,7 +2,7 @@ import weaviate from "weaviate-client";
 import {ProductType} from "../app/definition"
 
 //search by image
-export async function searchProductsByImage(base64Image: string) {
+export async function searchProductsByImage(base64Image: string, limit: number = 4) {
   try {
     // Connect to Weaviate
     const client = await weaviate.connectToLocal();
@@ -13,7 +13,7 @@ export async function searchProductsByImage(base64Image: string) {
     const result = await myCollection.query.nearImage(
       base64Image,  // The model provider integration will automatically vectorize the query
       {
-        limit: 4,
+        limit: limit,
       }
     ) 
 
@@ -24,7 +24,7 @@ export async function searchProductsByImage(base64Image: string) {
   }
 }
 //search by text
-export async function searchProductsByText(searchText: string) {
+export async function searchProductsByText(searchText: string, limit: number = 4) {
   try {
     // Connect to Weaviate
     const client = await weaviate.connectToLocal();
@@ -34,7 +34,7 @@ export async function searchProductsByText(searchText: string) {
     // Perform text search
     const result = await myCollection.query.nearText(
       searchText,
-      {limit: 4,}
+      {limit: limit}
     );
 
     return result?.objects;

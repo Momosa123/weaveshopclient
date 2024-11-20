@@ -15,7 +15,7 @@ export default async function ProductPage({
     const product = response.data.Get.FashionProducts[0];
     const imageUrl = product.main_image;
     const base64Image = await imageUrlToBase64(imageUrl);
-    const allSimilarProducts = await searchProductsByImage(base64Image);
+    const allSimilarProducts = await searchProductsByImage(base64Image, 4);
     const similarProducts = allSimilarProducts?.slice(1);
 
     if (!product) {
