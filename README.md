@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weavishop Fashion Product Search Application
+Weavishop is a modern, scalable, and user-friendly platform designed to provide a seamless shopping experience. Built with cutting-edge technologies, it offers features such as product search with images  and a responsive design for all devices.
 
-## Getting Started
+This project demonstrates the implementation of an e-commerce platform, including:
 
-First, run the development server:
+Search functionality: Use text or image-based queries for product discovery.
+Dynamic product display: Integrates with a backend vector store for data retrieval.
+Responsive design: Optimized for both mobile and desktop users.
+Scalable architecture: Powered by Next.js, Tailwind CSS, and Weaviate for vector search.
 
-```bash
+
+## Steps to Run Locally
+
+1- Clone the repository:
+git clone https://github.com/your-username/ecommerce-app.git
+cd ecommerce-app
+
+2- Install dependencies:
+npm install
+
+3- Start the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4- Run `docker-compose up -d` to start the Docker container
+
+5- Deploy a local instance of Weaviate using Docker:
+navigate to:[http://localhost:3000/weaviate-instance](http://localhost:3000/weaviate-instance)
+
+After setting up Weaviate, you can view the main application at:
+[http://localhost:3000](http://localhost:3000)
+
+## Features
+
+- Semantic product search using Weaviate vector database
+- Real-time search results
+- Similar product recommendations
+- Docker integration for local Weaviate instance
+
+## Development
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses:
+- Next.js, TailwindCSS
+- Weaviate for vector search capabilities
+- Docker for local development
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Weaviate Documentation](https://weaviate.io/developers/weaviate)
+- [Docker Documentation](https://docs.docker.com/)
