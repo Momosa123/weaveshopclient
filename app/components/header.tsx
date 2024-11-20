@@ -10,7 +10,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <div className="relative px-4 md:px-[80px] py-4">
+    <div className="fixed top-0 left-0 right-0 bg-white z-50 px-4 md:px-[80px] py-4">
       <div className="flex items-center justify-between">
         {/* Left section with hamburger and logo */}
         <div className="flex items-center gap-4 flex-1 md:flex-none">

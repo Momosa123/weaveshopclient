@@ -23,7 +23,7 @@ export default async function ProductPage({
     }
 
     return (
-        <>
+        <div className="flex flex-col min-h-screen pt-[72px]">
         <ProductDetail 
             main_image={product.main_image}
             title={product.title}
@@ -35,6 +35,6 @@ export default async function ProductPage({
         <SimilarProducts similarProducts={similarProducts} title="Similar Products" />
 
         <ProductReviews />
-        </>
+        </div>
     );
 }
