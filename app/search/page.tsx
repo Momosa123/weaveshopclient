@@ -1,10 +1,10 @@
 "use client";
 import { WeaviateReturn } from "weaviate-client";
 import SearchBar from "../components/searchBar";
-import SearchResults from "../components/searchResults";
 import { useState } from "react";
 import { ProductType } from "../definition";
-import Container from "../components/Container";
+import Container from "../components/container";
+import SimilarProducts from "../components/similarProducts";
 
 export default function SearchPage() {
     const [results, setResults] = useState<WeaviateReturn<ProductType> | undefined>(undefined); 
@@ -15,7 +15,7 @@ export default function SearchPage() {
                 <h1 className="text-2xl font-bold text-center">Find your perfect look using AI search powered by Weaviate</h1>
                 <SearchBar setResults={setResults} isMobile /> 
             </div>
-            <SearchResults results={results}  />
+            <SimilarProducts similarProducts={results} title="Search Results" />
 
         </Container>
     );
