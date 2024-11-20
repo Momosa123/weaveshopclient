@@ -8,14 +8,14 @@ export default function Footer() {
     <Newsletter />   
     <footer className="bg-gray-50 px-6 py-12 md:px-12 pt-24 mt-3">
       <div className="max-w-7xl mx-auto">
-        {/* Logo et description */}
+        {/* Logo eandt description */}
         <div className="mb-8 md:mb-12">
           <h2 className="text-xl font-bold mb-3">Weavishop</h2>
           <p className="text-gray-600 text-sm max-w-xs">
-            We have clothes that suits your style and which you're proud to wear. From women to men.
+            We have clothes that suits your style and which you&apos;re proud to wear. From women to men.
           </p>
           
-          {/* Réseaux sociaux */}
+          {/* Social links */}
           <div className="flex gap-4 mt-4">
             <Link href="#" className="text-gray-600 hover:text-black">
               <svg className="w-5 h-5" /* Twitter icon */ />
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Navigation Links */}
+          {/* Navigation Links */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <h3 className="font-semibold mb-4">COMPANY</h3>
