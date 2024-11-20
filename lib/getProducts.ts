@@ -10,7 +10,7 @@ export async function getProducts(){
         }
     )
     const response =  await client.graphql.get().withClassName("FashionProducts").withFields("title _additional { id  },main_image,title,average_rating,price").withLimit(9).do();
-   console.log(response)
+  
    return response
    }
 
