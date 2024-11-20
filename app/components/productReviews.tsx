@@ -9,7 +9,7 @@ export default function ProductReviews() {
     <h1 className="text-2xl font-bold mb-4 text-center">Product Reviews</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        {reviews.map((review, index) => (
+        {reviews.slice(0,2).map((review, index) => (
           <Review
             key={index}
             name={review.name}
@@ -20,5 +20,5 @@ export default function ProductReviews() {
       </div>
     </div>
     </>
-  );
+  );  
 } 
