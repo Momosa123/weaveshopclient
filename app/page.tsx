@@ -1,7 +1,7 @@
 import AllProducts from "./components/homeProducts";
 import Hero from "./components/hero";
 import ReviewScroller from "./components/reviewScroller";
-import Container from "./components/Container";
+import Container from "./components/container";
 interface SearchParams {
   search?: string;
   imageSearch?: string;
