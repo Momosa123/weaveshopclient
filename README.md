@@ -47,3 +47,6 @@ To learn more about the technologies used:
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Weaviate Documentation](https://weaviate.io/developers/weaviate)
 - [Docker Documentation](https://docs.docker.com/)
+
+Here is another app that uses weaviate for movie recommandations
+https://weavimovie.vercel.app/
