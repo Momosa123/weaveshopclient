@@ -1,5 +1,3 @@
-"use client";
-
 import { products } from "@/lib/temp-data";
 import Product from "./Product";
 
