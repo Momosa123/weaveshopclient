@@ -5,11 +5,12 @@ import AddToCartButton from "@/app/components/AddToCartButton";
 
 interface PageProps {
   params: Promise<{ id: string }>;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default async function ProductPage({ params }: PageProps) {
+export default async function ProductPage({ params, searchParams }: PageProps) {
   const { id } = await params;
+  await searchParams;
 
   const product = await prisma.product.findUnique({
     where: { id },
