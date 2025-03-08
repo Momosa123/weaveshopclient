@@ -3,13 +3,12 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import AddToCartButton from '@/app/components/AddToCartButton'
 
-interface PageProps {
-  params: {
-    id: string
-  }
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default async function ProductPage({ params }: PageProps) {
+export default async function ProductPage({ params }: Props) {
   const product = await prisma.product.findUnique({
     where: { id: params.id },
     include: { category: true },
