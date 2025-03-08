@@ -33,7 +33,7 @@ export default function Newsletter() {
                   </div>
                 </div>
                 <button className="w-full bg-white text-black py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                  S'abonner à la Newsletter
+                  S&apos;abonner à la Newsletter
                 </button>
               </div>
             </div>
