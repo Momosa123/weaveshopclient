@@ -21,7 +21,7 @@ export default function Hero() {
                 TROUVEZ DES VÊTEMENTS QUI CORRESPONDENT À VOTRE STYLE
               </h1>
               <p className="text-lg text-white mb-8">
-                Découvrez notre collection soigneusement sélectionnée de mode haut de gamme. Du casual à l'élégant, trouvez les pièces parfaites qui expriment votre style unique.
+                Découvrez notre collection soigneusement sélectionnée de mode haut de gamme. Du casual à l&apos;élégant, trouvez les pièces parfaites qui expriment votre style unique.
               </p>
               <Link 
                 href="/search" 

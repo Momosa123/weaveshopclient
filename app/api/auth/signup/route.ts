@@ -37,9 +37,11 @@ export async function POST(request: Request) {
       },
     })
 
-    const { password: _, ...result } = user
-
-    return NextResponse.json(result)
+    return NextResponse.json({ 
+      id: user.id,
+      name: user.name,
+      email: user.email 
+    })
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(

@@ -1,12 +1,14 @@
 'use client'
 
 import { signIn } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 export default function SignIn() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams.get("callbackUrl") || "/"
   const [isLoading, setIsLoading] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -29,7 +31,7 @@ export default function SignIn() {
         return
       }
 
-      router.push('/')
+      router.push(callbackUrl)
       router.refresh()
       toast.success('Signed in successfully')
     } catch (error) {

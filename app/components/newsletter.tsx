@@ -37,6 +37,9 @@ export default function Newsletter() {
                 </button>
               </div>
             </div>
+            <p className="text-sm text-gray-500">
+              Inscrivez-vous à notre newsletter pour ne rien manquer de l&apos;actualité mode
+            </p>
           </div>
         </div>
       </div>
