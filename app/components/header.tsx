@@ -25,7 +25,7 @@ export default function Header() {
               height={24}
             />
           </button>
-          <Link href="/"><h1 className="text-2xl font-bold text-center flex-1 md:flex-none">WEAVESHOP</h1></Link>
+          <Link href="/"><h1 className="text-2xl font-bold text-center flex-1 md:flex-none">HAKK</h1></Link>
         </div>
 
         {/* Desktop navigation */}
