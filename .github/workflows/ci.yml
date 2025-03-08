@@ -32,5 +32,8 @@ jobs:
     - name: Lint
       run: pnpm lint
 
+    - name: Production Build
+      run: NODE_ENV=production pnpm build
+
     - name: Build
       run: pnpm build 

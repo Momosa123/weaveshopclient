@@ -1,21 +1,21 @@
-import { prisma } from '@/lib/prisma'
-import { notFound } from 'next/navigation'
-import Image from 'next/image'
-import AddToCartButton from '@/app/components/AddToCartButton'
+import { prisma } from "@/lib/prisma";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import AddToCartButton from "@/app/components/AddToCartButton";
 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+interface PageProps {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default async function ProductPage({ params }: Props) {
+export default async function ProductPage({ params }: PageProps) {
   const product = await prisma.product.findUnique({
     where: { id: params.id },
     include: { category: true },
-  })
+  });
 
   if (!product) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -24,7 +24,9 @@ export default async function ProductPage({ params }: Props) {
         {/* Product details */}
         <div className="lg:max-w-lg lg:self-end">
           <div className="mt-4">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{product.title}</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              {product.title}
+            </h1>
           </div>
 
           <section aria-labelledby="information-heading" className="mt-4">
@@ -33,13 +35,17 @@ export default async function ProductPage({ params }: Props) {
             </h2>
 
             <div className="flex items-center">
-              <p className="text-lg text-gray-900 sm:text-xl">${product.price.toFixed(2)}</p>
+              <p className="text-lg text-gray-900 sm:text-xl">
+                ${product.price.toFixed(2)}
+              </p>
 
               <div className="ml-4 border-l border-gray-300 pl-4">
                 <h2 className="sr-only">Reviews</h2>
                 <div className="flex items-center">
                   <p className="ml-2 text-sm text-gray-500">
-                    {product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
+                    {product.stock > 0
+                      ? `${product.stock} in stock`
+                      : "Out of stock"}
                   </p>
                 </div>
               </div>
@@ -71,5 +77,5 @@ export default async function ProductPage({ params }: Props) {
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}
