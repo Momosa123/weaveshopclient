@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import StarRating from "./starRating";
 import Link from "next/link";
