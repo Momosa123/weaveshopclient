@@ -1,5 +1,6 @@
 import { prisma } from "./prisma";
 import { Product } from "../app/definition";
+import { Product as PrismaProduct } from "@prisma/client";
 
 //search by image
 export async function searchProductsByImage(
@@ -16,7 +17,12 @@ export async function searchProductsByImage(
       },
     });
 
-    return products;
+    return products.map((product: PrismaProduct) => ({
+      ...product,
+      main_image: product.images[0],
+      average_rating: 4.5, // Valeur par défaut
+      rating_number: 0,
+    }));
   } catch (error) {
     console.error("Error searching products by image:", error);
     return [];
@@ -42,7 +48,12 @@ export async function searchProductsByText(
       },
     });
 
-    return products;
+    return products.map((product: PrismaProduct) => ({
+      ...product,
+      main_image: product.images[0],
+      average_rating: 4.5, // Valeur par défaut
+      rating_number: 0,
+    }));
   } catch (error) {
     console.error("Error searching products by text:", error);
     return [];
