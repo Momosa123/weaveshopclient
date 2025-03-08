@@ -18,7 +18,7 @@ const ReviewScroller = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      <h1 className="text-5xl font-integral font-bold text-center mt-10">OUR HAPPY CUSTOMERS</h1>
+      <h1 className="text-5xl font-integral font-bold text-center mt-10">NOS CLIENTS SATISFAITS</h1>
       <div
         className="transition-transform duration-1000 ease-in-out"
         style={{

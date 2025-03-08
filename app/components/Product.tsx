@@ -1,6 +1,7 @@
 import Image from "next/image";
 import StarRating from "./starRating";
 import Link from "next/link";
+import AddToCartButton from "./ui/AddToCartButton";
 
 interface ProductProps {
     id: string;
@@ -12,25 +13,26 @@ interface ProductProps {
 
 export default function Product({ id, main_image, title, average_rating, price }: ProductProps) {
   return (
-    <Link href={`/products/${id}`} className="group">
-      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200">
-        <Image
-          src={main_image}
-          alt={title}
-          className="h-full w-full object-cover object-center group-hover:opacity-75"
-          width={500}
-          height={500}
-        />
-      </div>
-      <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="text-sm text-gray-700">{title}</h3>
+    <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
+      <Link href={`/products/${id}`}>
+        <div className="relative aspect-square mb-4">
+          <Image
+            src={main_image}
+            alt={title}
+            fill
+            className="object-cover rounded-lg"
+          />
         </div>
-        <p className="text-sm font-medium text-gray-900">${price.toFixed(2)}</p>
-      </div>
-      <div className="mt-1">
-        <StarRating rating={average_rating} />
-      </div>
-    </Link>
+        <div className="space-y-2">
+          <h3 className="font-medium text-gray-900 truncate">{title}</h3>
+          <div className="flex items-center gap-1">
+            <StarRating rating={average_rating} />
+            <span className="text-sm text-gray-500">({average_rating})</span>
+          </div>
+          <p className="font-semibold text-lg">{price.toFixed(2)} €</p>
+        </div>
+      </Link>
+      <AddToCartButton productId={id} />
+    </div>
   );
 }

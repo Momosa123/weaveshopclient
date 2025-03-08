@@ -62,33 +62,17 @@ export default function Hero() {
             priority
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/30 px-6 flex flex-col justify-center">
-            <h1 className="text-4xl font-bold leading-tight mb-4 text-white">
+          <div className="absolute inset-0 bg-black/30 px-6 flex flex-col">
+            <h1 className="text-2xl md:text-4xl font-bold leading-tight mb-4 text-white mt-4">
               TROUVEZ DES VÊTEMENTS QUI CORRESPONDENT À VOTRE STYLE
             </h1>
-            <p className="text-white mb-6">
-              Découvrez notre collection soigneusement sélectionnée de mode haut de gamme.
-            </p>
+            <div className="flex-grow" />
             <Link 
               href="/shop" 
-              className="inline-block w-full bg-white text-black py-4 rounded-full text-center text-lg font-medium hover:bg-gray-100 transition-colors"
+              className="inline-block w-full bg-white text-black py-4 rounded-full text-center text-lg font-medium hover:bg-gray-100 transition-colors mb-8"
             >
               Acheter Maintenant
             </Link>
-            <div className="flex flex-col gap-4 mt-8">
-              <div>
-                <p className="text-3xl font-bold text-white">200+</p>
-                <p className="text-gray-200">Marques Internationales</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">2,000+</p>
-                <p className="text-gray-200">Produits de Qualité</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">30,000+</p>
-                <p className="text-gray-200">Clients Satisfaits</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
