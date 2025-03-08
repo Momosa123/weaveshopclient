@@ -34,7 +34,7 @@ export default function SignIn() {
       router.push(callbackUrl)
       router.refresh()
       toast.success('Signed in successfully')
-    } catch (_error) {
+    } catch {
       toast.error('Something went wrong')
     } finally {
       setIsLoading(false)
