@@ -1,39 +1,30 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 import Header from "./components/header";
 import Footer from "./components/footer";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Weaveshop",
-  description: "Browse through hundreds of articles using weaviate",
+  title: "WeaveShop",
+  description: "Your one-stop shop for fashion",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-      
+      <body className={inter.className}>
+        <Providers>
           <Header />
           {children}
           <Footer />
-   
+        </Providers>
       </body>
     </html>
   );

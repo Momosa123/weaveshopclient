@@ -1,18 +1,18 @@
 export default function Newsletter() {
     return (
-      <div className="relative -mb-20 md:-mb-24 mt-20">
+      <div className="relative mt-20">
         <div className="mx-6 md:mx-auto max-w-6xl">
           <div className="bg-black rounded-xl px-6 py-8 md:py-12 md:px-16">
             <div className="md:flex md:items-center md:justify-between">
               <h2 className="text-white text-2xl md:text-4xl font-bold max-w-md mb-6 md:mb-0">
-                STAY UP TO DATE ABOUT OUR LATEST OFFERS
+                RESTEZ INFORMÉ DE NOS DERNIÈRES OFFRES
               </h2>
               
               <div className="md:w-[400px]">
                 <div className="relative mb-3">
                   <input 
                     type="email" 
-                    placeholder="Enter your email address" 
+                    placeholder="Entrez votre adresse email" 
                     className="w-full px-4 py-3 rounded-lg bg-white pl-10"
                   />
                   <div className="absolute left-3 top-1/2 -translate-y-1/2">
@@ -33,7 +33,7 @@ export default function Newsletter() {
                   </div>
                 </div>
                 <button className="w-full bg-white text-black py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                  Subscribe to Newsletter
+                  S'abonner à la Newsletter
                 </button>
               </div>
             </div>

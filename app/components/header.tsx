@@ -30,10 +30,10 @@ export default function Header() {
 
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/search">Search</Link>
-          <Link href="/">On Sale</Link>
-          <Link href="/">New Arrivals</Link>
-          <Link href="/">Brands</Link>
+          <Link href="/search">Rechercher</Link>
+          <Link href="/">Promotions</Link>
+          <Link href="/">Nouveautés</Link>
+          <Link href="/">Marques</Link>
         </div>
 
         {/* Right section: Search and Basket */}
@@ -69,7 +69,7 @@ export default function Header() {
         <div className="fixed inset-0 bg-white z-50 md:hidden">
           <div className="px-4 py-4">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">Search</h2>
+              <h2 className="text-lg font-semibold">Rechercher</h2>
               <button 
                 onClick={() => setIsSearchOpen(false)}
                 className="p-2"
@@ -86,10 +86,10 @@ export default function Header() {
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden z-50">
           <div className="flex flex-col p-4">
-            <Link href="/search" className="py-2 hover:bg-gray-100">Search</Link>
-            <Link href="/" className="py-2 hover:bg-gray-100">On Sale</Link>
-            <Link href="/" className="py-2 hover:bg-gray-100">New Arrivals</Link>
-            <Link href="/" className="py-2 hover:bg-gray-100">Brands</Link>
+            <Link href="/search" className="py-2 hover:bg-gray-100">Rechercher</Link>
+            <Link href="/" className="py-2 hover:bg-gray-100">Promotions</Link>
+            <Link href="/" className="py-2 hover:bg-gray-100">Nouveautés</Link>
+            <Link href="/" className="py-2 hover:bg-gray-100">Marques</Link>
           </div>
         </div>
       )}
