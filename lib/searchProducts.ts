@@ -1,46 +1,50 @@
-import weaviate from "weaviate-client";
-import {ProductProperties} from "../app/definition"
+import { prisma } from "./prisma";
+import { Product } from "../app/definition";
 
 //search by image
-export async function searchProductsByImage(base64Image: string, limit: number = 4) {
+export async function searchProductsByImage(
+  imageBase64: string,
+  limit: number = 4,
+): Promise<Product[]> {
+  // Pour l'instant, retourne simplement les produits les plus récents
+  // La recherche par image nécessiterait une intégration avec un service d'IA
   try {
-    // Connect to Weaviate
-    const client = await weaviate.connectToLocal();
-    const collectionName = "FashionProducts";
-    const myCollection = client.collections.get<ProductProperties>(collectionName);
+    const products = await prisma.product.findMany({
+      take: limit,
+      orderBy: {
+        id: "desc",
+      },
+    });
 
-    // Perform nearImage search
-    const result = await myCollection.query.nearImage(
-      base64Image,  // The model provider integration will automatically vectorize the query
-      {
-        limit: limit,
-      }
-    ) 
-
-    return result?.objects;
+    return products;
   } catch (error) {
-    console.error('Error searching similar products:', error);
-    throw error;
+    console.error("Error searching products by image:", error);
+    return [];
   }
 }
+
 //search by text
-export async function searchProductsByText(searchText: string, limit: number = 4) {
+export async function searchProductsByText(
+  searchText: string,
+  limit: number = 4,
+): Promise<Product[]> {
   try {
-    // Connect to Weaviate
-    const client = await weaviate.connectToLocal();
-    const collectionName = "FashionProducts";
-    const myCollection = client.collections.get<ProductProperties>(collectionName);
+    const products = await prisma.product.findMany({
+      where: {
+        OR: [
+          { title: { contains: searchText, mode: "insensitive" } },
+          { description: { contains: searchText, mode: "insensitive" } },
+        ],
+      },
+      take: limit,
+      orderBy: {
+        id: "desc",
+      },
+    });
 
-    // Perform text search
-    const result = await myCollection.query.nearText(
-      searchText,
-      {limit: limit}
-    );
-
-    return result?.objects;
+    return products;
   } catch (error) {
-    console.error('Error searching products by text:', error);
-    throw error;
+    console.error("Error searching products by text:", error);
+    return [];
   }
 }
-  
