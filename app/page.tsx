@@ -1,7 +1,7 @@
 import AllProducts from "./components/homeProducts";
 import Hero from "./components/hero";
 import ReviewScroller from "./components/reviewScroller";
-import Container from "./components/container";
+import Container from "./components/Container";
 
 export default async function Home() {
 

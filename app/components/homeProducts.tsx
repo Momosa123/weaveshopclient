@@ -1,5 +1,5 @@
 import { products } from "@/lib/temp-data";
-import Product from "./product";
+import Product from "./Product";
 
 export default function AllProducts() {
   return (

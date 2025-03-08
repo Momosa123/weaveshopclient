@@ -3,7 +3,7 @@ import { WeaviateGenericObject } from "weaviate-client";
 import SearchBar from "../components/searchBar";
 import { useState } from "react";
 import { ProductType } from "../definition";
-import Container from "../components/container";
+import Container from "../components/Container";
 import SimilarProducts from "../components/similarProducts";
 
 export default function SearchPage() {

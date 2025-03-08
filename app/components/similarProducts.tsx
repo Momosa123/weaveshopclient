@@ -1,5 +1,5 @@
 import { ProductProperties } from "../definition";
-import Product from "./product";
+import Product from "./Product";
 
 interface SimilarProductsProps {
     similarProducts:ProductProperties[] | undefined
