@@ -1,15 +1,15 @@
 name: CI
 
-# Temporarily disabled
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # Ajoute un timeout de 10 minutes
 
     steps:
     - uses: actions/checkout@v4
@@ -27,14 +27,10 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Type check
-      run: pnpm tsc --noEmit
-
-    - name: Lint
-      run: pnpm lint
-
-    - name: Production Build
-      run: NODE_ENV=production pnpm build
+    - name: Type check and lint
+      run: |
+        pnpm tsc --noEmit
+        pnpm lint
 
     - name: Build
       run: pnpm build 
