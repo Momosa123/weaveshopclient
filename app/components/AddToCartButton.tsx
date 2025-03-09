@@ -1,30 +1,30 @@
-'use client'
+"use client";
 
-import { useCart } from '@/lib/hooks/useCart'
-import { Product } from '@prisma/client'
-import { useState } from 'react'
-import { toast } from 'react-hot-toast'
+import { useCart } from "@/lib/hooks/useCart";
+import { Product } from "@/app/definition";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 interface AddToCartButtonProps {
-  product: Product
+  product: Product;
 }
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
-  const { addItem } = useCart()
-  const [isAdding, setIsAdding] = useState(false)
+  const { addItem } = useCart();
+  const [isAdding, setIsAdding] = useState(false);
 
   const handleAddToCart = () => {
-    setIsAdding(true)
+    setIsAdding(true);
     addItem({
       id: product.id,
       title: product.title,
       price: product.price,
       image: product.images[0],
       quantity: 1,
-    })
-    toast.success('Added to cart')
-    setIsAdding(false)
-  }
+    });
+    toast.success("Added to cart");
+    setIsAdding(false);
+  };
 
   return (
     <button
@@ -33,7 +33,11 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
       onClick={handleAddToCart}
       disabled={isAdding || product.stock === 0}
     >
-      {isAdding ? 'Adding...' : product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
+      {isAdding
+        ? "Adding..."
+        : product.stock === 0
+          ? "Out of Stock"
+          : "Add to Cart"}
     </button>
-  )
-} 
+  );
+}
