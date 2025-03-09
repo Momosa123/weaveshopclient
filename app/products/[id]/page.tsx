@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import AddToCartButton from "@/app/components/AddToCartButton";
+import { Product } from "@/app/definition";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -12,14 +13,22 @@ export default async function ProductPage({ params, searchParams }: PageProps) {
   const { id } = await params;
   await searchParams;
 
-  const product = await prisma.product.findUnique({
+  const productData = await prisma.product.findUnique({
     where: { id },
     include: { category: true },
   });
 
-  if (!product) {
+  if (!productData) {
     notFound();
   }
+
+  // Adapter l'objet product pour correspondre au type Product
+  const product: Product = {
+    ...productData,
+    main_image: productData.images[0] || "",
+    average_rating: 0, // Valeur par défaut
+    rating_number: 0, // Valeur par défaut
+  };
 
   return (
     <div className="bg-white">

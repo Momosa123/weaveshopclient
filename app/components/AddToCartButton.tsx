@@ -19,7 +19,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
       id: product.id,
       title: product.title,
       price: product.price,
-      image: product.images[0],
+      image: product.images[0] || product.main_image,
       quantity: 1,
     });
     toast.success("Added to cart");
