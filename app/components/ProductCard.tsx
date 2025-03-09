@@ -1,13 +1,14 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Product } from '@prisma/client'
+import Image from "next/image";
+import Link from "next/link";
+import { Product } from "@/app/definition";
 
 interface ProductCardProps {
   product: Product & {
     category: {
-      name: string
-    }
-  }
+      name: string;
+      id: string;
+    };
+  };
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
@@ -27,7 +28,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           <h3 className="text-sm text-gray-700">{product.title}</h3>
           <p className="mt-1 text-sm text-gray-500">{product.category.name}</p>
         </div>
-        <p className="text-sm font-medium text-gray-900">${product.price.toFixed(2)}</p>
+        <p className="text-sm font-medium text-gray-900">
+          ${product.price.toFixed(2)}
+        </p>
       </div>
       {product.stock <= 5 && product.stock > 0 && (
         <p className="mt-1 text-sm text-red-500">Only {product.stock} left!</p>
@@ -36,5 +39,5 @@ export default function ProductCard({ product }: ProductCardProps) {
         <p className="mt-1 text-sm text-red-500">Out of stock</p>
       )}
     </Link>
-  )
-} 
+  );
+}
